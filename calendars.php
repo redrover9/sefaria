@@ -1,5 +1,4 @@
 <?php
-
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "http://www.sefaria.org/api/calendars/?timezone=America/Vancouver&custom=ashkenazi");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
