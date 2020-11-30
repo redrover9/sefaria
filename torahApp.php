@@ -1,3 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<div class='some-page-wrapper'>
+<style>
+.some-page-wrapper {
+  margin: 15px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.double-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 2;
+}
+
+.hebrew-column {
+  
+}
+
+.english-column {
+    
+}
+</style>
+</head>
+<body>
+
 <?php
 $ch = curl_init();
 $parasha = $_POST['parasha'];
@@ -92,8 +133,24 @@ if (preg_match($pattern, $verses)) {
 	$hebrewString = implode("<br> <br>", $hebrew);
 	$englishString = implode("<br> <br>", $english);
 }
-echo'<span style="font-size: 50pt">'. $hebrewString . '</span>';
-echo '<br>';
-echo '<br>';
-echo ('<span style="font-size: 50pt">'. $englishString . '</span>');
 ?>
+<div class="row">
+	<div class="column">
+		<div class="hebrew-column">
+			<?php
+		echo '<div style="font-size: 50pt">'. $hebrewString . '</div>';
+		?>
+</div>
+</div>
+<div class="column">
+<div class="english-column">
+	<?php
+		echo '<div style="font-size: 50pt">'. $englishString . '</div>';
+		?>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
